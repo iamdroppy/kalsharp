@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DABD4004-AF1F-4876-836A-B1BF1D2DA6AC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KalSharp</RootNamespace>
+    <AssemblyName>KalSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>C:\Users\Admin\Downloads\NHibernate-3.2.0.CR1-bin\Required_Bins\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Kml">
+      <HintPath>..\..\arturas-kalonline-coding\KalMarkupLanguage\Kml\bin\Debug\Kml.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>C:\Users\Admin\Downloads\NHibernate-3.2.0.CR1-bin\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="Chat\ChatCommands\NormalChat.cs" />
+    <Compile Include="Chat\ChatCommands\GetItem.cs" />
+    <Compile Include="Chat\ChatCommands\IChatCommand.cs" />
+    <Compile Include="Chat\ChatManager.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Configs\Config.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\ConfigPropertyTypes\Country.cs" />
+    <Compile Include="Configs\ConfigPropertyTypes\GenMonsterRect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\InitItems\Action.cs" />
+    <Compile Include="Configs\InitItems\Class.cs" />
+    <Compile Include="Configs\InitItems\ItemCodes\Handlers\CH2350.cs" />
+    <Compile Include="Configs\InitItems\ItemCodes\Handlers\CH1222.cs" />
+    <Compile Include="Configs\InitItems\Limit.cs" />
+    <Compile Include="Configs\ConfigType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\GenMonster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\GenNpc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\InitItems\InitItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\InitItems\Specialties\Attack.cs" />
+    <Compile Include="Configs\InitItems\Specialties\Buff.cs" />
+    <Compile Include="Configs\InitItems\Specialties\ChangePrefix.cs" />
+    <Compile Include="Configs\InitItems\Specialties\Charming.cs" />
+    <Compile Include="Configs\InitItems\Specialties\GState.cs" />
+    <Compile Include="Configs\InitItems\Specialties\Magic.cs" />
+    <Compile Include="Configs\InitItems\Specialties\MoveSpeed.cs" />
+    <Compile Include="Configs\InitItems\Specialties\Refresh.cs" />
+    <Compile Include="Configs\InitItems\Specialties\Specialty.cs" />
+    <Compile Include="Configs\InitItems\Specialties\Teleport.cs" />
+    <Compile Include="Configs\InitMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\InitItems\ItemCodes\Code.cs" />
+    <Compile Include="Configs\InitItems\ItemCodes\Handlers\CodeHandler.cs" />
+    <Compile Include="Configs\InitItems\ItemCodes\CodeManager.cs" />
+    <Compile Include="Configs\Loaders\ConfigLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Loaders\GenMonster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Loaders\GenNpc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Loaders\InitItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Loaders\InitMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Loaders\Quest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\Quest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\Action.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\ActionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\Actions\Guide.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\Actions\Html.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\Case.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\Condition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs\Quests\Conditions\Level.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Crypter.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="Hackshield.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="PacketIn.cs" />
+    <Compile Include="PacketOut.cs" />
+    <Compile Include="Packets\P_CharacterError.cs" />
+    <Compile Include="Packets\P_UnknownError.cs" />
+    <Compile Include="Packets\P_SetEffect.cs" />
+    <Compile Include="Packets\P_DisconnectMessage.cs" />
+    <Compile Include="Packets\P_Disconnect.cs" />
+    <Compile Include="Packets\P_Ping.cs" />
+    <Compile Include="Packets\P_AcceptChange.cs" />
+    <Compile Include="Packets\P_CameraUpdate.cs" />
+    <Compile Include="Packets\P_Chat.cs" />
+    <Compile Include="Packets\P_DeletedPlayerList.cs" />
+    <Compile Include="Packets\P_EndPlayerMove.cs" />
+    <Compile Include="Packets\P_EquipItem.cs" />
+    <Compile Include="Packets\P_Exit.cs" />
+    <Compile Include="Packets\P_GuildDummy.cs" />
+    <Compile Include="Packets\P_Init.cs" />
+    <Compile Include="Packets\P_LoginAccepted.cs" />
+    <Compile Include="Packets\P_LoginError.cs" />
+    <Compile Include="Packets\P_Notice.cs" />
+    <Compile Include="Packets\P_OpenDialog.cs" />
+    <Compile Include="Packets\P_PickupDrop.cs" />
+    <Compile Include="Packets\P_PlayerInfo.cs" />
+    <Compile Include="Packets\P_PlayerList.cs" />
+    <Compile Include="Packets\P_EntityMove.cs" />
+    <Compile Include="Packets\P_SendInventory.cs" />
+    <Compile Include="Packets\P_SendSkills.cs" />
+    <Compile Include="Packets\P_SessionRequest.cs" />
+    <Compile Include="Packets\P_SetCamera.cs" />
+    <Compile Include="Packets\P_SetGState.cs" />
+    <Compile Include="Packets\P_SkillExecute.cs" />
+    <Compile Include="Packets\P_SkillSet.cs" />
+    <Compile Include="Packets\P_SpawnDrop.cs" />
+    <Compile Include="Packets\P_SpawnMob.cs" />
+    <Compile Include="Packets\P_SpawnNPC.cs" />
+    <Compile Include="Packets\P_SpawnPlayer.cs" />
+    <Compile Include="Packets\P_StatPacket.cs" />
+    <Compile Include="Packets\P_UnequipItem.cs" />
+    <Compile Include="Packets\P_Unknown.cs" />
+    <Compile Include="Packets\P_Unknown2.cs" />
+    <Compile Include="Packets\P_Unspawn.cs" />
+    <Compile Include="Packets\P_UnspawnDrop.cs" />
+    <Compile Include="Packets\P_UpdateInventory.cs" />
+    <Compile Include="Packets\P_ValueChange.cs" />
+    <Compile Include="PlayerDeleted.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="ServerConsole.cs" />
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Translators\PT_Ping.cs" />
+    <Compile Include="Utils\CharacterPosition.cs" />
+    <Compile Include="Utils\Utilities.cs" />
+    <Compile Include="Worlds\Characters\Character.cs" />
+    <Compile Include="Worlds\Items\Gear.cs" />
+    <Compile Include="Worlds\Items\PlayerGear.cs" />
+    <Compile Include="Worlds\Stats\CharacterBaseStats.cs" />
+    <Compile Include="Worlds\Stats\EntityBaseStats.cs" />
+    <Compile Include="Worlds\Stats\EntityStats.cs" />
+    <Compile Include="Worlds\Skills\PlayerSkill.cs" />
+    <Compile Include="Worlds\Skills\SkillHandler.cs" />
+    <Compile Include="Thinker.cs" />
+    <Compile Include="Thought.cs" />
+    <Compile Include="TranslatorHander.cs" />
+    <Compile Include="Translators\PT_Attack.cs" />
+    <Compile Include="Translators\PT_Bank.cs" />
+    <Compile Include="Translators\PT_Buff.cs" />
+    <Compile Include="Translators\PT_CallProcess.cs" />
+    <Compile Include="Translators\PT_CastleInfo.cs" />
+    <Compile Include="Translators\PT_Character.cs" />
+    <Compile Include="Translators\PT_Chat.cs" />
+    <Compile Include="Translators\PT_ClientVersion.cs" />
+    <Compile Include="Translators\PT_Dummy.cs" />
+    <Compile Include="Translators\PT_DumpUnknown.cs" />
+    <Compile Include="Translators\PT_Enchanting.cs" />
+    <Compile Include="Translators\PT_Events.cs" />
+    <Compile Include="Translators\PT_Exit.cs" />
+    <Compile Include="Translators\PT_Friendslist.cs" />
+    <Compile Include="Translators\PT_Guild.cs" />
+    <Compile Include="Translators\PT_Init.cs" />
+    <Compile Include="Translators\PT_Item.cs" />
+    <Compile Include="Translators\PT_Login.cs" />
+    <Compile Include="Translators\PT_Mail.cs" />
+    <Compile Include="Translators\PT_Movement.cs" />
+    <Compile Include="Translators\PT_Npc.cs" />
+    <Compile Include="Translators\PT_Party.cs" />
+    <Compile Include="Translators\PT_PlayerAction.cs" />
+    <Compile Include="Translators\PT_PlayerShop.cs" />
+    <Compile Include="Translators\PT_PlayersInSight.cs" />
+    <Compile Include="Translators\PT_PlayerSpawn.cs" />
+    <Compile Include="Translators\PT_PlayerTeleportScroll.cs" />
+    <Compile Include="Translators\PT_PvP.cs" />
+    <Compile Include="Translators\PT_Revive.cs" />
+    <Compile Include="Translators\PT_SessionRequest.cs" />
+    <Compile Include="Translators\PT_SiegeGun.cs" />
+    <Compile Include="Translators\PT_Skill.cs" />
+    <Compile Include="Translators\PT_SpecialItem.cs" />
+    <Compile Include="Translators\PT_Stats.cs" />
+    <Compile Include="Translators\PT_Teleport.cs" />
+    <Compile Include="Translators\PT_Trade.cs" />
+    <Compile Include="Translators\PT_Transform.cs" />
+    <Compile Include="Utils\Vector2.cs" />
+    <Compile Include="Utils\Vector3.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Worlds\Drops\Drop.cs" />
+    <Compile Include="Worlds\Items\Inventory.cs" />
+    <Compile Include="Worlds\Items\Item.cs" />
+    <Compile Include="Worlds\Maps\Map.cs" />
+    <Compile Include="Worlds\Monsters\Monster.cs" />
+    <Compile Include="Worlds\Npcs\Npc.cs" />
+    <Compile Include="Worlds\Npcs\NpcManager.cs" />
+    <Compile Include="Worlds\Skills\ISkill.cs" />
+    <Compile Include="Worlds\ServerWorld.cs" />
+    <Compile Include="Worlds\WorldEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Etc.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\GenMonster.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Goods.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\InitItem.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\InitMap.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\InitMonster.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\InitNPC.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\InitSkill.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\ItemGroup.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Prefix.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Quest.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Worlds\Items\Item.hbm.xml" />
+    <EmbeddedResource Include="Player.hbm.xml" />
+    <EmbeddedResource Include="Account.hbm.xml" />
+    <EmbeddedResource Include="PlayerDeleted.hbm.xml" />
+    <Content Include="kaldb.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="kalauth.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="logo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Compile Include="Client.EditPlayer.cs" />
+    <None Include="nhibernate-configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="nhibernate-mapping.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

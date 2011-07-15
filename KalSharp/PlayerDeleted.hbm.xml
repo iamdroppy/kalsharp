@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="KalSharp.PlayerDeleted, KalSharp" table="PlayerDeleted">
+    <id name="PID" column="PID" length="11">
+      <generator class="assigned" />
+    </id>
+    <property name="UID" column="UID" type="Int32" length="11" />
+    <property name="DeletedTime" column="DeletedTime" type="DateTime" length="1337" />
+  </class>
+</hibernate-mapping>
