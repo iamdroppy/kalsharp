@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="KalSharp.Worlds.Items.Item, KalSharp" table="Item">
+    <id name="IID" column="IID" length="11">
+      <generator class="assigned" />
+    </id>
+    <property name="PID" column="PID" type="Int32" length="11" />
+    <property name="Index" column="[Index]" type="Int64" length="11" />
+    <property name="Prefix" column="Prefix" type="Byte" length="11" />
+    <property name="Info" column="Info" type="Int32" length="11" />
+    <property name="Num" column="Num" type="Int32" length="11" />
+    <property name="MaxEnd" column="MaxEnd" type="Byte" length="11" />
+    <property name="CurEnd" column="CurEnd" type="Byte" length="11" />
+    <property name="SetGem" column="SetGem" type="Byte" length="11" />
+    <property name="XAttack" column="XAttack" type="Byte" length="11" />
+    <property name="XMagic" column="XMagic" type="Byte" length="11" />
+    <property name="XDefense" column="XDefense" type="Byte" length="11" />
+    <property name="XHit" column="XHit" type="Byte" length="11" />
+    <property name="XDodge" column="XDodge" type="Byte" length="11" />
+    <property name="Protect" column="Protect" type="Byte" length="11" />
+    <property name="UpgrLevel" column="UpgrLevel" type="Byte" length="11" />
+    <property name="UpgrRate" column="UpgrRate" type="Byte" length="11" />
+  </class>
+</hibernate-mapping>

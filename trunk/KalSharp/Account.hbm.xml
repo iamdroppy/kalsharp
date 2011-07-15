@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="KalSharp.Account, KalSharp" table="Login">
+    <id name="UID" column="UID" length="11">
+      <generator class="native" />
+    </id>
+    <property name="ID" column="ID" type="String" length="11" />
+    <property name="Password" column="PWD" type="Byte[]" length="11" />
+    <property name="BirthDate" column="Birth" type="DateTime" length="11" />
+    <property name="Type" column="Type" type="Byte" length="11" />
+    <property name="ExpTime" column="Info" type="Int32" length="11" />
+    <property name="Info" column="Info" type="Int32" length="11" />
+  </class>
+</hibernate-mapping>

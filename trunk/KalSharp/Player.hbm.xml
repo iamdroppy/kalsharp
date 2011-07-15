@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="KalSharp.Player, KalSharp" table="Player">
+    <id name="PID" column="PID" length="11">
+      <generator class="native" />
+    </id>
+    <property name="UID" column="UID" type="Int32" length="11" />
+    <property name="Admin" column="Admin" type="Byte" length="11" />
+    <property name="Name" column="Name" type="String" length="14" />
+    <property name="Class" column="Class" type="Byte" length="11" />
+    <property name="Specialty" column="Specialty" type="Byte" length="11" />
+    <property name="Level" column="Level" type="Byte" length="11" />
+    <property name="Contribute" column="Contribute" type="Int16" length="11" />
+    <property name="Experience" column="Exp" type="Int64" length="11" />
+    <property name="GID" column="GID" type="Int32" length="11" />
+    <property name="GRole" column="GRole" type="Byte" length="11" />
+    <property name="Strength" column="Strength" type="Byte" length="11" />
+    <property name="Health" column="Health" type="Byte" length="11" />
+    <property name="Intelligence" column="Intelligence" type="Byte" length="11" />
+    <property name="Wisdom" column="Wisdom" type="Byte" length="11" />
+    <property name="Dexterity" column="Dexterity" type="Byte" length="11" />
+    <property name="CurrentHP" column="CurHP" type="Int16" length="11" />
+    <property name="CurrentMP" column="CurMP" type="Int16" length="11" />
+    <property name="StatPoints" column="PUPoint" type="Int16" length="11" />
+    <property name="SkillPoints" column="SUPoint" type="Int16" length="11" />
+    <property name="Killed" column="Killed" type="Byte" length="11" />
+    <property name="Map" column="Map" type="Byte" length="11" />
+    <property name="X" column="X" type="Int32" length="11" />
+    <property name="Y" column="Y" type="Int32" length="11" />
+    <property name="Z" column="Z" type="Int32" length="11" />
+    <property name="Face" column="Face" type="Byte" length="11" />
+    <property name="Hair" column="Hair" type="Byte" length="11" />
+    <property name="Rage" column="Rage" type="Int32" length="11" />
+  </class>
+</hibernate-mapping>
