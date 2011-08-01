@@ -7,7 +7,7 @@ using KalSharp.Worlds.Characters;
 using KalSharp.Worlds.Items;
 using KalSharp.Translators;
 using KalSharp.Packets;
-using KalSharp.Configs.InitItems.Specialties;
+using KalSharp.Configs.Items.Specialties;
 
 namespace KalSharp.Worlds
 {

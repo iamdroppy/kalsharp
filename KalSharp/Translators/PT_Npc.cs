@@ -40,7 +40,7 @@ namespace KalSharp.Translators
     //        for(int i=0;i<amount;i++)
     //        {
     //            // should be items, not player items
-    //            PlayerItem item = PlayerItem.Get((int)items[i]);
+    //            PlayerItem pItem = PlayerItem.Get((int)items[i]);
     //            client.Player.Player.Inventory.Items.Add(item);
     //            // update AddToInventory with generic item-object
     //            client.Send(new Packets.AddToInventory((int)items[i],(int)amounts[i]),"Buy Item");

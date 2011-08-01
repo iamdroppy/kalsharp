@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using KalSharp.Configs;
 using Kml;
-using KalSharp.Configs.ConfigPropertyTypes;
-using KalSharp.Configs.Quests;
 
-namespace KalSharp.Configs.Loaders
+namespace KalSharp.Configs.Quests
 {
-    class Quest : ConfigLoader
+    class QuestLoader
     {
-        public override ConfigType Load(KmlNode Node)
+        public static Quest Load(KmlNode Node)
         {
-            Quests.Quest quest = new Quests.Quest();
+            Quest quest = new Quest();
 
             quest.Index = Node.SelectSingleNode("index").Values[1].ValueAsInt;
             quest.Stage = Node.SelectSingleNode("index").Values[2].ValueAsInt;
@@ -43,7 +41,7 @@ namespace KalSharp.Configs.Loaders
             return quest;
         }
 
-        public Case LoadCase(KmlNode CaseNode)
+        public static Case LoadCase(KmlNode CaseNode)
         {
             Case newCase = new Case();
             newCase.Actions = new List<Quests.Action>();
@@ -72,9 +70,9 @@ namespace KalSharp.Configs.Loaders
        //     return condition;
        // }
 
-        public Quests.Action LoadAction(KmlNode ActionNode)
+        public static Action LoadAction(KmlNode ActionNode)
         {
-            Quests.Action action = ActionManager.CreateAction(ActionNode);
+            Action action = ActionManager.CreateAction(ActionNode);
 
             return action;
         }

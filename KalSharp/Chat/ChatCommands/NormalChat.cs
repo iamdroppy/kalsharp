@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using KalSharp.Worlds.Characters;
 using KalSharp.Worlds.Items;
-using KalSharp.Configs.InitItems;
+using KalSharp.Configs.Items;
 
 namespace KalSharp.Chat.ChatCommands
 {

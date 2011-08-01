@@ -43,9 +43,9 @@ namespace KalSharp.Packets
                 writer.Write(player.Hair);
                 // inventory
                 writer.Write((byte)player.Gear.EquippedItems.Count);
-                foreach(Item item in player.Gear.EquippedItems)
+                foreach(PlayerItem pItem in player.Gear.EquippedItems)
                 {
-                    writer.Write((ushort)item.Index);
+                    writer.Write((ushort)pItem.Index);
                 }                
             }
             writer.Write((int)0x03);

@@ -8,12 +8,12 @@ namespace KalSharp.Packets
 {
     public class EquipItem : PacketOut
     {
-        public EquipItem(Item Item, WorldEntity Entity)
+        public EquipItem(PlayerItem PlayerItem, WorldEntity Entity)
             : base(0x05, 10)
         {
             writer.Write(Entity.WorldId);
-            writer.Write(Item.IID);
-            writer.Write((ushort)Item.Index);
+            writer.Write(PlayerItem.IID);
+            writer.Write((ushort)PlayerItem.Index);
         }
     }
 }

@@ -214,7 +214,7 @@ namespace KalSharp
             handler.Add(0x32, PacketTranslator.BankRetrieve);
             handler.Add(0x33, PacketTranslator.CallProcess);
             handler.Add(0x34, PacketTranslator.BankInfo);
-            handler.Add(0x35, PacketTranslator.Dummy);
+            handler.Add(0x35, PacketTranslator.Dummy); // bird event
             handler.Add(0x36, PacketTranslator.Dummy);
             handler.Add(0x37, PacketTranslator.Dummy);
             handler.Add(0x38, PacketTranslator.SetRevivalPoint);

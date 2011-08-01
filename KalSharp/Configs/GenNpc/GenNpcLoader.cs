@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using KalSharp.Configs;
 using Kml;
-using KalSharp.Configs.ConfigPropertyTypes;
 
-namespace KalSharp.Configs.Loaders
+namespace KalSharp.Configs.GenNpc
 {
-    class GenNpc : ConfigLoader
+    class GenNpcLoader
     {
-        public override ConfigType Load(KmlNode Node)
+        public static GenNpc Load(KmlNode Node)
         {
-            Configs.GenNpc genNpc = new Configs.GenNpc();
+            GenNpc genNpc = new GenNpc();
 
             genNpc.Index = Node.SelectSingleNode("index").Values[1].ValueAsInt;
 

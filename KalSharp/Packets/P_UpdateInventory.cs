@@ -7,26 +7,26 @@ namespace KalSharp.Packets
 {
     class AddToInventory : PacketOut
     {
-        public AddToInventory(Item Item)
+        public AddToInventory(PlayerItem PlayerItem)
             : base(0x07, 26)
         {
-            writer.Write((int)Item.IID);
-            writer.Write((ushort)Item.Index);
-            writer.Write((byte)Item.Prefix);
-            writer.Write((int)Item.Info);
-            writer.Write((int)Item.Num);
-            writer.Write((byte)Item.MaxEnd);
-            writer.Write((byte)Item.CurEnd);
-            writer.Write((byte)Item.SetGem); // SetGem            
-            writer.Write((byte)Item.XAttack);
-            writer.Write((byte)Item.XMagic);
-            writer.Write((byte)Item.XDefense);
-            writer.Write((byte)Item.XHit);
-            writer.Write((byte)Item.XDodge);
-            writer.Write((byte)Item.Protect);
-            writer.Write((byte)Item.UpgrLevel);
-            writer.Write((byte)Item.UpgrRate);
-            ServerConsole.WriteLine("added {0} to inventory", MessageLevel.Message, Item.Index);
+            writer.Write((int)PlayerItem.IID);
+            writer.Write((ushort)PlayerItem.Index);
+            writer.Write((byte)PlayerItem.Prefix);
+            writer.Write((int)PlayerItem.Info);
+            writer.Write((int)PlayerItem.Num);
+            writer.Write((byte)PlayerItem.MaxEnd);
+            writer.Write((byte)PlayerItem.CurEnd);
+            writer.Write((byte)PlayerItem.SetGem); // SetGem            
+            writer.Write((byte)PlayerItem.XAttack);
+            writer.Write((byte)PlayerItem.XMagic);
+            writer.Write((byte)PlayerItem.XDefense);
+            writer.Write((byte)PlayerItem.XHit);
+            writer.Write((byte)PlayerItem.XDodge);
+            writer.Write((byte)PlayerItem.Protect);
+            writer.Write((byte)PlayerItem.UpgrLevel);
+            writer.Write((byte)PlayerItem.UpgrRate);
+            ServerConsole.WriteLine("added {0} to inventory", MessageLevel.Message, PlayerItem.Index);
         }
     }
 

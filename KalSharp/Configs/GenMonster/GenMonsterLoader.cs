@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using KalSharp.Configs;
 using Kml;
-using KalSharp.Configs.ConfigPropertyTypes;
 
-namespace KalSharp.Configs.Loaders
+namespace KalSharp.Configs.GenMonster
 {
-    class GenMonster : ConfigLoader
+    class GenMonsterLoader
     {
-        public override ConfigType Load(KmlNode Node)
+        public static GenMonster Load(KmlNode Node)
         {
-            Configs.GenMonster genMonster = new Configs.GenMonster();
+            GenMonster genMonster = new GenMonster();
 
             genMonster.Index = Node.SelectSingleNode("index").Values[1].ValueAsInt;
             genMonster.Cycle = Node.SelectSingleNode("cycle").Values[1].ValueAsInt;

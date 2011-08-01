@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
-  <class name="KalSharp.Worlds.Items.Item, KalSharp" table="Item">
+  <class name="KalSharp.Worlds.Items.PlayerItem, KalSharp" table="Item">
     <id name="IID" column="IID" length="11">
       <generator class="assigned" />
     </id>
