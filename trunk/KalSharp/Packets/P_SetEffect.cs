@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using KalSharp.Worlds;
-using KalSharp.Configs.InitItems.Specialties;
+using KalSharp.Configs.Items.Specialties;
 
 namespace KalSharp.Packets
 {

@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using KalSharp.Configs;
 using Kml;
-using KalSharp.Configs.ConfigPropertyTypes;
-using KalSharp.Configs.Quests;
 
-namespace KalSharp.Configs.Loaders
+namespace KalSharp.Configs.Maps
 {
-    class InitMap : ConfigLoader
+    class MapLoader
     {
-        public override ConfigType Load(KmlNode Node)
+        public static Map Load(KmlNode Node)
         {
-            Configs.InitMap map = new Configs.InitMap();
+            Map map = new Map();
 
             map.Index = Node.SelectSingleNode("index").Values[1].ValueAsInt;
             map.Kind = Node.SelectSingleNode("kind").Values[1].ValueAsInt;

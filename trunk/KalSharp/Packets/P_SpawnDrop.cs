@@ -10,11 +10,11 @@ namespace KalSharp.Packets
         public SpawnDrop(Drop Drop)
             : base(0x36, 18)
         {
-            writer.Write((ushort)Drop.Item.Index);
+            writer.Write((ushort)Drop.PlayerItem.Index);
             writer.Write(Drop.WorldId);
             writer.Write(Drop.Position.X);
             writer.Write(Drop.Position.Y);
-            writer.Write(Drop.Item.Num);
+            writer.Write(Drop.PlayerItem.Num);
             ServerConsole.WriteLine("Spawned DROP");
         }
     }

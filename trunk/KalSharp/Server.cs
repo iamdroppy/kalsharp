@@ -50,16 +50,14 @@ namespace KalSharp
             Database.Connect();
             //hackshiedl
             Hackshield.Load();
-            //initialize configs
-            Config.Initialize();
             //get path to config files
             string configPath = Path.Combine(Environment.CurrentDirectory, Settings.Default.ConfigPath);
             //load config files
-            Config.LoadConfigFiles(configPath);
+            ConfigManager.LoadConfigFiles(configPath);
             //read config files
-            Config.ReadConfig();
+            ConfigManager.ReadConfig();
             //load item codes
-            Configs.InitItems.ItemCodes.CodeManager.Load();
+            Configs.Items.ItemCodes.CodeManager.Load();
             //load chat manager
             Chat.ChatManager.Load();
             //prepare a new world

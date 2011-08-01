@@ -10,9 +10,9 @@ namespace KalSharp.Packets
 		{
             ushort packetsize = 1;
 
-            foreach (Item item in inventory.Items)
+            foreach (PlayerItem playerItem in inventory.Items)
             {
-                if (item.InitItem.Plural == 1)
+                if (playerItem.Item.Plural == 1)
                 {
                     packetsize += 15;
                 }
@@ -26,31 +26,26 @@ namespace KalSharp.Packets
 
             writer.Write((byte)inventory.Items.Count);
 
-            foreach(Item item in inventory.Items)
+            foreach(PlayerItem pItem in inventory.Items)
             {
-                writer.Write((int)item.IID);
-                writer.Write((ushort)item.Index);
-                writer.Write((byte)item.Prefix);
-                writer.Write((int)item.Info);
-                writer.Write((int)item.Num);
-                if (item.InitItem.Plural != 1)
+                writer.Write((int)pItem.IID);
+                writer.Write((ushort)pItem.Index);
+                writer.Write((byte)pItem.Prefix);
+                writer.Write((int)pItem.Info);
+                writer.Write((int)pItem.Num);
+                if (pItem.Item.Plural != 1)
                 {
-                    ServerConsole.WriteLine("No plural");
-                    writer.Write((byte)item.MaxEnd);
-                    writer.Write((byte)item.CurEnd);
-                    writer.Write((byte)item.SetGem); // SetGem            
-                    writer.Write((byte)item.XAttack);
-                    writer.Write((byte)item.XMagic);
-                    writer.Write((byte)item.XDefense);
-                    writer.Write((byte)item.XHit);
-                    writer.Write((byte)item.XDodge);
-                    writer.Write((byte)item.Protect);
-                    writer.Write((byte)item.UpgrLevel);
-                    writer.Write((byte)item.UpgrRate);
-                }
-                else
-                {
-                    ServerConsole.WriteLine("Plural");
+                    writer.Write((byte)pItem.MaxEnd);
+                    writer.Write((byte)pItem.CurEnd);
+                    writer.Write((byte)pItem.SetGem); // SetGem            
+                    writer.Write((byte)pItem.XAttack);
+                    writer.Write((byte)pItem.XMagic);
+                    writer.Write((byte)pItem.XDefense);
+                    writer.Write((byte)pItem.XHit);
+                    writer.Write((byte)pItem.XDodge);
+                    writer.Write((byte)pItem.Protect);
+                    writer.Write((byte)pItem.UpgrLevel);
+                    writer.Write((byte)pItem.UpgrRate);
                 }
             }
 

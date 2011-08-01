@@ -16,47 +16,47 @@ namespace KalSharp.Worlds.Items
             this.Character = Character;
         }
 
-        public Item RemoveItem(Item Item, int Quantity)
+        public PlayerItem RemoveItem(PlayerItem PlayerItem, int Quantity)
         {
 
-            if (Item.Num == Quantity || Item.InitItem.Plural != 1)
+            if (PlayerItem.Num == Quantity || PlayerItem.Item.Plural != 1)
             {
                 ServerConsole.WriteLine("No split");
 
                 //remove item from database
-                Database.Delete(Database.KalDB, Item);
+                Database.Delete(Database.KalDB, PlayerItem);
                 
                 //inform the client we have removed the item
-                Character.Client.Send(new Packets.RemoveFromInventory(Item.IID));
+                Character.Client.Send(new Packets.RemoveFromInventory(PlayerItem.IID));
                 //assign new iid and pid
-                Item.IID = 0;
-                Item.PID = 0;
+                PlayerItem.IID = 0;
+                PlayerItem.PID = 0;
                 
                 //return the item we removed
-                return Item;
+                return PlayerItem;
             }
             else
             {
                 ServerConsole.WriteLine("Split");
                 //split the item
-                Item newItem = Item.Split(Quantity);
-                Character.Client.Send(new Packets.SetItemQuantity(Item.IID, Item.Num));
+                PlayerItem newItem = PlayerItem.Split(Quantity);
+                Character.Client.Send(new Packets.SetItemQuantity(PlayerItem.IID, PlayerItem.Num));
                 return newItem;
             }
         }
 
-        public Item ContainsItemStack(Item Item, int Quantity)
+        public PlayerItem ContainsItemStack(PlayerItem PlayerItem, int Quantity)
         {
             lock (this)
             {
-                foreach (Item item in Items)
+                foreach (PlayerItem pitem in Items)
                 {
-                    if (item.CanJoin(Item))
+                    if (pitem.CanJoin(PlayerItem))
                     {
-                        if(item.Num >= Quantity)
+                        if(pitem.Num >= Quantity)
                         {
-                            ServerConsole.WriteLine("Contains stack of item {0}", MessageLevel.Message, Item.Index);
-                            return item;
+                            ServerConsole.WriteLine("Contains stack of item {0}", MessageLevel.Message, PlayerItem.Index);
+                            return pitem;
                         }
                     }
                 }
@@ -64,48 +64,48 @@ namespace KalSharp.Worlds.Items
             }
         }
 
-        public void AddItem(Item Item)
+        public void AddItem(PlayerItem PlayerItem)
         {
             //check if theres atleast 1 item the same in inventory
-            Item currentStack = ContainsItemStack(Item, 1);
+            PlayerItem currentStack = ContainsItemStack(PlayerItem, 1);
             if(currentStack != null)
             {
                 //join items
-                currentStack.Join(Item);
+                currentStack.Join(PlayerItem);
                 Character.Client.Send(new Packets.SetItemQuantity(currentStack.IID, currentStack.Num));
             }
             else
             {
                 //add new item
-                Item.PID = Character.Player.PID;
+                PlayerItem.PID = Character.Player.PID;
                 //check if it needs an iid
-                if(Item.IID == 0)
+                if(PlayerItem.IID == 0)
                 {
-                    Item.IID = Item.NextIID();
+                    PlayerItem.IID = PlayerItem.NextIID();
                 }
-                ServerConsole.WriteLine("Added new item {0}", MessageLevel.Message, Item.IID);
+                ServerConsole.WriteLine("Added new item {0}", MessageLevel.Message, PlayerItem.IID);
                 //save it
-                Database.Save(Database.KalDB, Item);
-                Character.Client.Send(new Packets.AddToInventory(Item));
+                Database.Save(Database.KalDB, PlayerItem);
+                Character.Client.Send(new Packets.AddToInventory(PlayerItem));
             }
             
         }
 
-        public void TransferItem(Item Item)
+        public void TransferItem(PlayerItem PlayerItem)
         {
-            Item.PID = Character.Player.PID;
-            Database.Update(Database.KalDB, Item);
+            PlayerItem.PID = Character.Player.PID;
+            Database.Update(Database.KalDB, PlayerItem);
         }
 
-        public List<Item> Items
+        public List<PlayerItem> Items
         {
             get
             {
                 using (ISession session = Database.KalDB.OpenSession())
                 {
-                    IQuery q = session.CreateQuery("FROM Item WHERE PID = :pid");
+                    IQuery q = session.CreateQuery("FROM PlayerItem WHERE PID = :pid");
                     q.SetParameter("pid", Character.Player.PID);
-                    return (List<Item>)q.List<Item>();
+                    return (List<PlayerItem>)q.List<PlayerItem>();
                 }
             }
         }

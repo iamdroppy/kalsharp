@@ -1,8 +1,8 @@
 using System;
 using KalSharp.Worlds.Items;
 using KalSharp.Worlds.Characters;
-using KalSharp.Configs.InitItems.ItemCodes;
-using KalSharp.Configs.InitItems.ItemCodes.Handlers;
+using KalSharp.Configs.Items.ItemCodes;
+using KalSharp.Configs.Items.ItemCodes.Handlers;
 using KalSharp.Worlds.Drops;
 using KalSharp.Worlds;
 
@@ -14,50 +14,50 @@ namespace KalSharp.Translators
         {
             int IID = (int)packet.ReadUInt32();
 
-            Item item = Item.GetItem(IID);
+            PlayerItem pItem = PlayerItem.GetItem(IID);
 
             //check if the item exists
-            if (item == null)
+            if (pItem == null)
             {
                 Hackshield.AddOffense(client, OffenseSeverity.IncorrectPacketDetails);
                 return;
             }
 
             //check if player owns the item
-            if (item.PID != client.Character.Player.PID)
+            if (pItem.PID != client.Character.Player.PID)
             {
                 Hackshield.AddOffense(client, OffenseSeverity.IncorrectPacketDetails);
                 return;
             }
 
-            CodeHandler handler = CodeManager.GetHandler(item.InitItem.Code);
+            CodeHandler handler = CodeManager.GetHandler(pItem.Item.Code);
 
-            handler.Equip(item, client.Character, client);
+            handler.Equip(pItem, client.Character, client);
         }
 
         public static void UnequipItem(Client client, PacketIn packet)
         {
             int IID = (int)packet.ReadUInt32();
 
-            Item item = Item.GetItem(IID);
+            PlayerItem pItem = PlayerItem.GetItem(IID);
 
             //check if the item exists
-            if (item == null)
+            if (pItem == null)
             {
                 Hackshield.AddOffense(client, OffenseSeverity.IncorrectPacketDetails);
                 return;
             }
 
             //check if player owns the item
-            if (item.PID != client.Character.Player.PID)
+            if (pItem.PID != client.Character.Player.PID)
             {
                 Hackshield.AddOffense(client, OffenseSeverity.IncorrectPacketDetails);
                 return;
             }
 
-            CodeHandler handler = CodeManager.GetHandler(item.InitItem.Code);
+            CodeHandler handler = CodeManager.GetHandler(pItem.Item.Code);
 
-            handler.Unequip(item, client.Character, client);
+            handler.Unequip(pItem, client.Character, client);
  
         }
 
@@ -69,27 +69,27 @@ namespace KalSharp.Translators
         public static void DropItem(Client client, PacketIn packet)
         {
             int IID = (int)packet.ReadUInt32();
-            Item item = Item.GetItem(IID);
+            PlayerItem pItem = PlayerItem.GetItem(IID);
 
             int quantity = (int)packet.ReadUInt32();
 
             //check if the item exists
-            if (item == null)
+            if (pItem == null)
             {
                 Hackshield.AddOffense(client, OffenseSeverity.IncorrectPacketDetails);
                 return;
             }
 
             //check if player owns the item
-            if (item.PID != client.Character.Player.PID)
+            if (pItem.PID != client.Character.Player.PID)
             {
                 Hackshield.AddOffense(client, OffenseSeverity.IncorrectPacketDetails);
                 return;
             }
 
-            CodeHandler handler = CodeManager.GetHandler(item.InitItem.Code);
+            CodeHandler handler = CodeManager.GetHandler(pItem.Item.Code);
 
-            handler.Drop(item, quantity, client.Character, client);
+            handler.Drop(pItem, quantity, client.Character, client);
         }
 
         public static void PickupDrop(Client client, PacketIn packet)
@@ -107,7 +107,7 @@ namespace KalSharp.Translators
                 return;
             }
 
-            CodeHandler handler = CodeManager.GetHandler(drop.Item.InitItem.Code);
+            CodeHandler handler = CodeManager.GetHandler(drop.PlayerItem.Item.Code);
 
             handler.Pickup(drop, client.Character, client);
             

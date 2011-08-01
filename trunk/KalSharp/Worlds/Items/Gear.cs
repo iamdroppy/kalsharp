@@ -8,7 +8,7 @@ namespace KalSharp.Worlds.Items
     public abstract class Gear
     {
 
-        public abstract List<Item> EquippedItems { get; }
+        public abstract List<PlayerItem> EquippedItems { get; }
         public abstract Dictionary<int, ushort> Slots { get; }
 
         public byte Strength
@@ -16,9 +16,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 byte Strength = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    Strength += item.InitItem.Specialty.Strength;
+                    Strength += pItem.Item.Specialty.Strength;
                 }
                 return Strength;
             }
@@ -29,9 +29,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 byte Health = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    Health += item.InitItem.Specialty.Health;
+                    Health += pItem.Item.Specialty.Health;
                 }
                 return Health;
             }
@@ -42,9 +42,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 byte Intelligence = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    Intelligence += item.InitItem.Specialty.Intelligence;
+                    Intelligence += pItem.Item.Specialty.Intelligence;
                 }
                 return Intelligence;
             }
@@ -55,9 +55,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 byte Wisdom = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                Wisdom += item.InitItem.Specialty.Intelligence;
+                Wisdom += pItem.Item.Specialty.Intelligence;
                 }
                 return Wisdom;
             }
@@ -68,9 +68,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 byte Dexterity = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    Dexterity += item.InitItem.Specialty.Dexterity;
+                    Dexterity += pItem.Item.Specialty.Dexterity;
                 }
                 return Dexterity;
             }
@@ -81,9 +81,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort MaximumHP = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    MaximumHP += item.InitItem.Specialty.HealthPoints;
+                    MaximumHP += pItem.Item.Specialty.HealthPoints;
                 }
                 return MaximumHP;
             }
@@ -94,9 +94,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort MaximumMP = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    MaximumMP += item.InitItem.Specialty.MagicPoints;
+                    MaximumMP += pItem.Item.Specialty.MagicPoints;
                 }
                 return MaximumMP;
             }
@@ -107,9 +107,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort Evasion = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    Evasion += item.InitItem.Specialty.Dodge;
+                    Evasion += pItem.Item.Specialty.Dodge;
                 }
                 return Evasion;
             }
@@ -120,9 +120,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort OTP = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    OTP += item.InitItem.Specialty.Hit;
+                    OTP += pItem.Item.Specialty.Hit;
                 }
                 return OTP;
             }
@@ -133,9 +133,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 byte Absorb = 0x00;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    Absorb += item.InitItem.Specialty.Absorb;
+                    Absorb += pItem.Item.Specialty.Absorb;
                 }
                 return Absorb;
             }
@@ -146,11 +146,11 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort MinDamage = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    if (item.InitItem.Specialty.Attack != null)
+                    if (pItem.Item.Specialty.Attack != null)
                     {
-                        MinDamage += item.InitItem.Specialty.Attack.Min;
+                        MinDamage += pItem.Item.Specialty.Attack.Min;
                     }
                 }
                 return MinDamage;
@@ -162,11 +162,11 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort MaxDamage = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    if (item.InitItem.Specialty.Attack != null)
+                    if (pItem.Item.Specialty.Attack != null)
                     {
-                        MaxDamage += item.InitItem.Specialty.Attack.Max;
+                        MaxDamage += pItem.Item.Specialty.Attack.Max;
                     }
                 }
                 return MaxDamage;
@@ -178,11 +178,11 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort MinMagicalDamage = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    if (item.InitItem.Specialty.Magic != null)
+                    if (pItem.Item.Specialty.Magic != null)
                     {
-                        MinMagicalDamage += item.InitItem.Specialty.Magic.Min;
+                        MinMagicalDamage += pItem.Item.Specialty.Magic.Min;
                     }
                 }
                 return MinMagicalDamage;
@@ -194,11 +194,11 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort MaxMagicalDamage = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    if (item.InitItem.Specialty.Magic != null)
+                    if (pItem.Item.Specialty.Magic != null)
                     {
-                        MaxMagicalDamage += item.InitItem.Specialty.Magic.Max;
+                        MaxMagicalDamage += pItem.Item.Specialty.Magic.Max;
                     }
                 }
                 return MaxMagicalDamage;
@@ -210,9 +210,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort Defense = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    Defense += item.InitItem.Specialty.Defense;
+                    Defense += pItem.Item.Specialty.Defense;
                 }
                 return Defense;
             }
@@ -225,9 +225,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort FireResistance = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    FireResistance += item.InitItem.Specialty.ResistFire;
+                    FireResistance += pItem.Item.Specialty.ResistFire;
                 }
                 return FireResistance;
             }
@@ -238,9 +238,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort IceResistance = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    IceResistance += item.InitItem.Specialty.ResistIce;
+                    IceResistance += pItem.Item.Specialty.ResistIce;
                 }
                 return IceResistance;
             }
@@ -251,9 +251,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort LightningResistance = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    LightningResistance += item.InitItem.Specialty.ResistLightning;
+                    LightningResistance += pItem.Item.Specialty.ResistLightning;
                 }
                 return LightningResistance;
             }
@@ -264,9 +264,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort CurseResistance = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    CurseResistance += item.InitItem.Specialty.ResistCurse;
+                    CurseResistance += pItem.Item.Specialty.ResistCurse;
                 }
                 return CurseResistance;
             }
@@ -277,9 +277,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort ParalysisResistance = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    ParalysisResistance += item.InitItem.Specialty.ResistParalysis;
+                    ParalysisResistance += pItem.Item.Specialty.ResistParalysis;
                 }
                 return ParalysisResistance;
             }
@@ -290,9 +290,9 @@ namespace KalSharp.Worlds.Items
             get
             {
                 ushort AttackSpeed = 0;
-                foreach (Item item in EquippedItems)
+                foreach (PlayerItem pItem in EquippedItems)
                 {
-                    AttackSpeed += item.InitItem.Specialty.AttackSpeed;
+                    AttackSpeed += pItem.Item.Specialty.AttackSpeed;
                 }
                 return AttackSpeed;
             }

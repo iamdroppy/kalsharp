@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KalSharp.Configs
+namespace KalSharp.Configs.Npcs.Events
 {
-    public abstract class ConfigType
+    class NpcEvent
     {
     }
 }

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KalSharp.Configs.ConfigPropertyTypes;
 
-namespace KalSharp.Configs
+namespace KalSharp.Configs.GenMonster
 {
-    public class GenMonster : ConfigType
+    public class GenMonster
     {
         /// <summary>
         /// Monster Index that will be spawned.

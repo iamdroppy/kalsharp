@@ -8,17 +8,15 @@ namespace KalSharp.Worlds.Drops
 {
     public class Drop : WorldEntity
     {
-        public Item Item;
+        public PlayerItem PlayerItem;
 
-        public Drop(Item Item, Vector3 Position)
+        public Drop(PlayerItem PlayerItem, Vector3 Position)
         {
-            this.Item = Item;
+            this.PlayerItem = PlayerItem;
             
             this.Position.X = Position.X;
             this.Position.Y = Position.Y;
             this.Position.Z = Position.Z;
-
-            ServerConsole.WriteLine("Created Drop");
         }
     }
 }

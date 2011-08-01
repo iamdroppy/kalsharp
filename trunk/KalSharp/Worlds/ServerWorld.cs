@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KalSharp.Worlds.Maps;
+using KalSharp.Configs.Maps;
 using KalSharp.Worlds.Npcs;
 
 namespace KalSharp.Worlds
@@ -67,7 +67,7 @@ namespace KalSharp.Worlds
         {
             ServerConsole.WriteLine("Loading NPCs", MessageLevel.Message);
 
-            foreach(Configs.GenNpc genNpc in Configs.Config.GenNpc)
+            foreach(Configs.GenNpc.GenNpc genNpc in Configs.ConfigManager.GenNpc)
             {
                 //check if its available to this country
                 if (genNpc.Countries.Contains(ServerWorld.Country))

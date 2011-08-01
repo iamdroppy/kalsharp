@@ -5,9 +5,9 @@ using System.Text;
 using System.Drawing;
 
 
-namespace KalSharp.Configs
+namespace KalSharp.Configs.GenNpc
 {
-    public class GenNpc : ConfigType
+    public class GenNpc
     {
         public int Index;
         public int[] Countries;

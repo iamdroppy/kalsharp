@@ -48,42 +48,42 @@ namespace KalSharp.Worlds.Items
                     slots[i] = 0;
                 }
 
-                foreach (Item Item in EquippedItems)
+                foreach (PlayerItem PlayerItem in EquippedItems)
                 {
-                    switch ((int)Item.InitItem.Code.Tertiary)
+                    switch ((int)PlayerItem.Item.Code.Tertiary)
                     {
                         case 1:
                             //melee
-                            slots[1] =(ushort)Item.Index;
+                            slots[1] =(ushort)PlayerItem.Index;
                             break;
 
                         case 2:
                             //ranged
-                            slots[1] =(ushort)Item.Index;
+                            slots[1] =(ushort)PlayerItem.Index;
                             break;
                         case 3:
                             //upper armor
-                            slots[4] =(ushort)Item.Index;
+                            slots[4] =(ushort)PlayerItem.Index;
                             break;
                         case 4:
                             //helmet
-                            slots[3] =(ushort)Item.Index;
+                            slots[3] =(ushort)PlayerItem.Index;
                             break;
                         case 5:
                             //gauntlet
-                            slots[6] =(ushort)Item.Index;
+                            slots[6] =(ushort)PlayerItem.Index;
                             break;
                         case 6:
                             //boots
-                            slots[7] =(ushort)Item.Index;
+                            slots[7] =(ushort)PlayerItem.Index;
                             break;
                         case 7:
                             //lower armor
-                            slots[5] =(ushort)Item.Index;
+                            slots[5] =(ushort)PlayerItem.Index;
                             break;
                         case 8:
                             //shield
-                            slots[2] =(ushort)Item.Index;
+                            slots[2] =(ushort)PlayerItem.Index;
                             break;
                     }
                 }
@@ -91,16 +91,16 @@ namespace KalSharp.Worlds.Items
             }
         }
 
-        public override List<Item> EquippedItems
+        public override List<PlayerItem> EquippedItems
         {
             get
             {
                 using (ISession session = Database.KalDB.OpenSession())
                 {
                     //todo animal system
-                    IQuery q = session.CreateQuery("FROM Item WHERE (Info = 1 OR Info = 9) AND PID = :pid");
+                    IQuery q = session.CreateQuery("FROM PlayerItem WHERE (Info = 1 OR Info = 9) AND PID = :pid");
                     q.SetParameter("pid", Player.PID);
-                    return (List<Item>)q.List<Item>();
+                    return (List<PlayerItem>)q.List<PlayerItem>();
                 }
             }
         }

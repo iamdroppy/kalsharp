@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KalSharp.Configs;
-using KalSharp.Configs.Quests;
 using KalSharp.Worlds.Characters;
 
 namespace KalSharp.Configs.Quests
 {
-    public class Quest : ConfigType
+    public class Quest
     {
         public int Index;
         public int Stage;

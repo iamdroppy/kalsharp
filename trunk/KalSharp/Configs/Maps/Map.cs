@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace KalSharp.Configs
+namespace KalSharp.Configs.Maps
 {
-    public class InitMap : ConfigType
+    public class Map
     {
         public int Index;
         public int Kind;

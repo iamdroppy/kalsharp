@@ -18,7 +18,7 @@ namespace KalSharp
                 while (i < 80)
                 {
                     Console.Write("-");
-                    Thread.Sleep(20);
+                    //Thread.Sleep(20);
                     i++;
                 }
                 ServerConsole.WriteLine("Server Starting", MessageLevel.Message);

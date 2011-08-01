@@ -59,62 +59,60 @@
     <Compile Include="Chat\ChatCommands\IChatCommand.cs" />
     <Compile Include="Chat\ChatManager.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="Configs\Config.cs">
+    <Compile Include="Configs\ConfigManager.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\ConfigPropertyTypes\Country.cs" />
-    <Compile Include="Configs\ConfigPropertyTypes\GenMonsterRect.cs">
+    <Compile Include="Configs\Country.cs" />
+    <Compile Include="Configs\GenMonster\GenMonsterRect.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\InitItems\Action.cs" />
-    <Compile Include="Configs\InitItems\Class.cs" />
-    <Compile Include="Configs\InitItems\ItemCodes\Handlers\CH2350.cs" />
-    <Compile Include="Configs\InitItems\ItemCodes\Handlers\CH1222.cs" />
-    <Compile Include="Configs\InitItems\Limit.cs" />
-    <Compile Include="Configs\ConfigType.cs">
+    <Compile Include="Configs\Items\Action.cs" />
+    <Compile Include="Configs\Items\Class.cs" />
+    <Compile Include="Configs\Items\ItemCodes\Handlers\CH2350.cs" />
+    <Compile Include="Configs\Items\ItemCodes\Handlers\CH1222.cs" />
+    <Compile Include="Configs\Items\Limit.cs" />
+    <Compile Include="Configs\GenMonster\GenMonster.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\GenMonster.cs">
+    <Compile Include="Configs\GenNpc\GenNpc.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\GenNpc.cs">
+    <Compile Include="Configs\Items\Item.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\InitItems\InitItem.cs">
+    <Compile Include="Configs\Items\Specialties\Attack.cs" />
+    <Compile Include="Configs\Items\Specialties\Buff.cs" />
+    <Compile Include="Configs\Items\Specialties\ChangePrefix.cs" />
+    <Compile Include="Configs\Items\Specialties\Charming.cs" />
+    <Compile Include="Configs\Items\Specialties\GState.cs" />
+    <Compile Include="Configs\Items\Specialties\Magic.cs" />
+    <Compile Include="Configs\Items\Specialties\MoveSpeed.cs" />
+    <Compile Include="Configs\Items\Specialties\Refresh.cs" />
+    <Compile Include="Configs\Items\Specialties\Specialty.cs" />
+    <Compile Include="Configs\Items\Specialties\Teleport.cs" />
+    <Compile Include="Configs\Maps\Map.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\InitItems\Specialties\Attack.cs" />
-    <Compile Include="Configs\InitItems\Specialties\Buff.cs" />
-    <Compile Include="Configs\InitItems\Specialties\ChangePrefix.cs" />
-    <Compile Include="Configs\InitItems\Specialties\Charming.cs" />
-    <Compile Include="Configs\InitItems\Specialties\GState.cs" />
-    <Compile Include="Configs\InitItems\Specialties\Magic.cs" />
-    <Compile Include="Configs\InitItems\Specialties\MoveSpeed.cs" />
-    <Compile Include="Configs\InitItems\Specialties\Refresh.cs" />
-    <Compile Include="Configs\InitItems\Specialties\Specialty.cs" />
-    <Compile Include="Configs\InitItems\Specialties\Teleport.cs" />
-    <Compile Include="Configs\InitMap.cs">
+    <Compile Include="Configs\Items\ItemCodes\Code.cs" />
+    <Compile Include="Configs\Items\ItemCodes\Handlers\CodeHandler.cs" />
+    <Compile Include="Configs\Items\ItemCodes\CodeManager.cs" />
+    <Compile Include="Configs\GenMonster\GenMonsterLoader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\InitItems\ItemCodes\Code.cs" />
-    <Compile Include="Configs\InitItems\ItemCodes\Handlers\CodeHandler.cs" />
-    <Compile Include="Configs\InitItems\ItemCodes\CodeManager.cs" />
-    <Compile Include="Configs\Loaders\ConfigLoader.cs">
+    <Compile Include="Configs\GenNpc\GenNpcLoader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\Loaders\GenMonster.cs">
+    <Compile Include="Configs\Items\ItemLoader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\Loaders\GenNpc.cs">
+    <Compile Include="Configs\Maps\MapLoader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Configs\Loaders\InitItem.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Configs\Loaders\InitMap.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Configs\Loaders\Quest.cs">
+    <Compile Include="Configs\Npcs\Events\NpcEvent.cs" />
+    <Compile Include="Configs\Npcs\GenNpc.cs" />
+    <Compile Include="Configs\Npcs\NpcLoader.cs" />
+    <Compile Include="Configs\Npcs\NpcManager.cs" />
+    <Compile Include="Configs\Quests\QuestLoader.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Configs\Quests\Quest.cs">
@@ -194,6 +192,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="ServerConsole.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -205,6 +204,7 @@
     <Compile Include="Worlds\Characters\Character.cs" />
     <Compile Include="Worlds\Items\Gear.cs" />
     <Compile Include="Worlds\Items\PlayerGear.cs" />
+    <Compile Include="Worlds\Npcs\Npc.cs" />
     <Compile Include="Worlds\Stats\CharacterBaseStats.cs" />
     <Compile Include="Worlds\Stats\EntityBaseStats.cs" />
     <Compile Include="Worlds\Stats\EntityStats.cs" />
@@ -255,11 +255,8 @@
     <Compile Include="Player.cs" />
     <Compile Include="Worlds\Drops\Drop.cs" />
     <Compile Include="Worlds\Items\Inventory.cs" />
-    <Compile Include="Worlds\Items\Item.cs" />
-    <Compile Include="Worlds\Maps\Map.cs" />
+    <Compile Include="Worlds\Items\PlayerItem.cs" />
     <Compile Include="Worlds\Monsters\Monster.cs" />
-    <Compile Include="Worlds\Npcs\Npc.cs" />
-    <Compile Include="Worlds\Npcs\NpcManager.cs" />
     <Compile Include="Worlds\Skills\ISkill.cs" />
     <Compile Include="Worlds\ServerWorld.cs" />
     <Compile Include="Worlds\WorldEntity.cs" />
